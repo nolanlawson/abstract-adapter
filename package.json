@@ -1,0 +1,28 @@
+{
+  "name": "pouchdb-abstract-adapter",
+  "version": "0.1.0",
+  "description": "Abstraction of a LevelDOWN-based adapter for easily building PouchDB adapter plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pouchdb/abstract-adapter.git"
+  },
+  "keywords": [
+    "pouchdb",
+    "abstract",
+    "adapter",
+    "couchdb"
+  ],
+  "author": "Nolan Lawson <nolan.lawson@gmail.com>",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/pouchdb/abstract-adapter/issues"
+  },
+  "homepage": "https://github.com/pouchdb/abstract-adapter",
+  "dependencies": {
+    "pouchdb": "^2.2.2"
+  }
+}
