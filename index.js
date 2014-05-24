@@ -2,12 +2,13 @@
 
 var PouchDB = require('pouchdb');
 var LevelPouch = PouchDB.adapters.leveldb;
-var utils = PouchDB.utils;
+var toPromise = require('pouchdb-topromise');
+var extend = require('pouchdb-extend');
 
 function AbstractAdapterFactory(leveldown) {
 
   function AbstractAdapter(opts, callback) {
-    var _opts = utils.extend({
+    var _opts = extend({
       db: leveldown
     }, opts);
 
@@ -20,12 +21,12 @@ function AbstractAdapterFactory(leveldown) {
   };
   AbstractAdapter.use_prefix = leveldown.usePrefix;
 
-  AbstractAdapter.destroy = utils.toPromise(function (name, opts, callback) {
+  AbstractAdapter.destroy = toPromise(function (name, opts, callback) {
     if (typeof opts === 'function') {
       callback = opts;
       opts = {};
     }
-    var _opts = utils.extend({
+    var _opts = extend({
       db: leveldown
     }, opts);
 
