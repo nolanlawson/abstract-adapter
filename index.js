@@ -1,7 +1,7 @@
 'use strict';
 
 var PouchDB = require('pouchdb');
-var LevelPouch = require('./node_modules/pouchdb/lib/adapters/leveldb.js');
+var LevelPouch = PouchDB.adapters.leveldb;
 var utils = PouchDB.utils;
 
 function AbstractAdapterFactory(leveldown) {
