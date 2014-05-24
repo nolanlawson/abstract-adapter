@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "Abstraction of a LevelDOWN-based adapter for easily building PouchDB adapter plugins",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pouchdb/abstract-adapter.git"
@@ -26,7 +23,7 @@
     "pouchdb": "^2.2.2"
   },
   "browser": {
-    "./migrate-browser.js": "./deps/migrate",
+    "./migrate-browser.js": "../deps/migrate",
     "./migrate-browser.js": "../adapters/../deps/migrate"
   }
 }

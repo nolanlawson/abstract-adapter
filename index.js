@@ -1,17 +1,16 @@
 'use strict';
 
-var PouchDB = require('pouchdb');
-var LevelPouch = require('./node_modules/pouchdb/lib/adapters/leveldb.js');
-var utils = PouchDB.utils;
+var utils = require('pouchdb').utils;
+var LevelPouch = require('pouchdb/lib/adapters/leveldb.js');
 
-function AbstractAdapterFactory(leveldown) {
+module.exports = function (leveldown) {
 
   function AbstractAdapter(opts, callback) {
-    var _opts = utils.extend({
+    opts = utils.extend({
       db: leveldown
     }, opts);
 
-    LevelPouch.call(this, _opts, callback);
+    LevelPouch.call(this, opts, callback);
   }
 
   // overrides for normal LevelDB behavior on Node
@@ -25,15 +24,14 @@ function AbstractAdapterFactory(leveldown) {
       callback = opts;
       opts = {};
     }
-    var _opts = utils.extend({
+    opts = utils.extend({
       db: leveldown
     }, opts);
 
-    return LevelPouch.destroy(name, _opts, callback);
+    return LevelPouch.destroy(name, opts, callback);
   });
   AbstractAdapter.adapterName = leveldown.adapterName;
   AbstractAdapter.needsMigration = false;
   return AbstractAdapter;
-}
+};
 
-module.exports = AbstractAdapterFactory;
