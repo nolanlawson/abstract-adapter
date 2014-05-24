@@ -5,7 +5,7 @@ var LevelPouch = PouchDB.adapters.leveldb;
 var toPromise = require('pouchdb-topromise');
 var extend = require('pouchdb-extend');
 
-function AbstractAdapterFactory(leveldown) {
+module.exports = function (leveldown) {
 
   function AbstractAdapter(opts, callback) {
     opts = extend({
@@ -35,6 +35,4 @@ function AbstractAdapterFactory(leveldown) {
   AbstractAdapter.adapterName = leveldown.adapterName;
   AbstractAdapter.needsMigration = false;
   return AbstractAdapter;
-}
-
-module.exports = AbstractAdapterFactory;
+};
