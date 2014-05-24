@@ -8,11 +8,11 @@ var extend = require('pouchdb-extend');
 function AbstractAdapterFactory(leveldown) {
 
   function AbstractAdapter(opts, callback) {
-    var _opts = extend({
+    opts = extend({
       db: leveldown
     }, opts);
 
-    LevelPouch.call(this, _opts, callback);
+    LevelPouch.call(this, opts, callback);
   }
 
   // overrides for normal LevelDB behavior on Node
