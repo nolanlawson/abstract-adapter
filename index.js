@@ -1,7 +1,7 @@
 'use strict';
 
 var utils = require('pouchdb').utils;
-var LevelPouch = require('./levelAdapter.js');
+var LevelPouch = require('pouchdb/lib/adapters/leveldb.js');
 
 module.exports = function (leveldown) {
 
