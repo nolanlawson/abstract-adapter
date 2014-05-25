@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/pouchdb/abstract-adapter",
   "dependencies": {
-    "pouchdb": "^2.2.2",
     "pouchdb-topromise": "0.0.0"
   }
 }

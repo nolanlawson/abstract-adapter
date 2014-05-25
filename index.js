@@ -1,11 +1,9 @@
 'use strict';
 
-var PouchDB = require('pouchdb');
-var LevelPouch = PouchDB.adapters.leveldb;
 var toPromise = require('pouchdb-topromise');
 var extend = require('pouchdb-extend');
 
-module.exports = function (leveldown) {
+module.exports = function (leveldown, LevelPouch) {
 
   function AbstractAdapter(opts, callback) {
     opts = extend({
